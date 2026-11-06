@@ -1,12 +1,12 @@
 :root {
-    --temple-green: #174b3a;
-    --temple-green-dark: #103629;
-    --temple-gold: #f0c75e;
+    --temple-green: #123d32;
+    --temple-green-dark: #0d2d26;
+    --temple-gold: #d9b45a;
     --temple-paper: #f5f7f3;
     --temple-card: #ffffff;
-    --temple-border: #dfe7e0;
-    --temple-text: #1d2b28;
-    --temple-muted: #52615b;
+    --temple-border: #d5dfd9;
+    --temple-text: #13231d;
+    --temple-muted: #3c4d49;
     --shadow: 0 12px 30px rgba(18, 34, 28, 0.08);
 }
 
@@ -20,6 +20,10 @@ body {
     background: var(--temple-paper);
     color: var(--temple-text);
     line-height: 1.6;
+}
+
+button {
+    font: inherit;
 }
 
 img {
@@ -83,19 +87,24 @@ img {
     display: flex;
 }
 
-.site-nav a {
+.site-nav .filter-btn {
     color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.5rem 0.7rem;
-    border-radius: 0.4rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 0.5rem;
+    font-weight: 700;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 150ms ease;
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav a.active {
+.site-nav .filter-btn:hover,
+.site-nav .filter-btn:focus-visible,
+.site-nav .filter-btn.active {
     background: var(--temple-gold);
     color: var(--temple-text);
+    border-color: var(--temple-gold);
 }
 
 .temple-page {
@@ -131,14 +140,7 @@ img {
 .page-intro p:last-child {
     margin: 0;
     max-width: 40rem;
-    color: rgba(255,255,255,0.9);
-}
-
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    margin: 0 0 1.25rem;
+    color: #edf5f1;
 }
 
 .filter-btn {
@@ -146,7 +148,6 @@ img {
     border-radius: 999px;
     background: #fff;
     color: var(--temple-text);
-    font: inherit;
     font-weight: 700;
     padding: 0.6rem 1rem;
     cursor: pointer;
@@ -183,31 +184,8 @@ img {
 
 .temple-figure figcaption {
     padding: 1rem 1rem 1.15rem;
-}
-
-.temple-figure h2 {
-    margin: 0 0 0.3rem;
-    font-family: "DM Serif Display", serif;
-    font-size: 1.5rem;
-    color: var(--temple-green-dark);
-}
-
-.temple-figure p {
-    margin: 0;
-    color: var(--temple-muted);
-}
-
-.temple-figure span {
-    display: inline-block;
-    margin-top: 0.7rem;
-    background: rgba(23, 75, 58, 0.08);
-    color: var(--temple-green);
-    border-radius: 999px;
-    padding: 0.3rem 0.65rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    color: var(--temple-text);
+    font-weight: 600;
 }
 
 .site-footer {
@@ -222,5 +200,5 @@ img {
 }
 
 #lastModified {
-    color: rgba(255,255,255,0.8);
+    color: #edf5f1;
 }

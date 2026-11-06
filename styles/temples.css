@@ -1,0 +1,226 @@
+:root {
+    --temple-green: #174b3a;
+    --temple-green-dark: #103629;
+    --temple-gold: #f0c75e;
+    --temple-paper: #f5f7f3;
+    --temple-card: #ffffff;
+    --temple-border: #dfe7e0;
+    --temple-text: #1d2b28;
+    --temple-muted: #52615b;
+    --shadow: 0 12px 30px rgba(18, 34, 28, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background: var(--temple-paper);
+    color: var(--temple-text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.site-header {
+    background: linear-gradient(180deg, var(--temple-green) 0%, var(--temple-green-dark) 100%);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem 0.7rem;
+}
+
+#course-title {
+    display: block;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.28rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 1.4rem;
+    height: 2px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.site-nav {
+    display: none;
+    flex-direction: column;
+    gap: 0.35rem;
+    background: rgba(16, 54, 41, 0.98);
+    padding: 0 1rem 1rem;
+}
+
+.site-nav.open {
+    display: flex;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.4rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.active {
+    background: var(--temple-gold);
+    color: var(--temple-text);
+}
+
+.temple-page {
+    width: min(72rem, calc(100% - 1.2rem));
+    margin: 1.5rem auto 3rem;
+}
+
+.page-intro {
+    margin-bottom: 1.25rem;
+    padding: 1.3rem 1.2rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(23, 75, 58, 0.96), rgba(16, 54, 41, 0.9));
+    color: #fff;
+    box-shadow: var(--shadow);
+}
+
+.eyebrow {
+    margin: 0 0 0.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--temple-gold);
+    font-weight: 700;
+}
+
+.page-intro h1 {
+    margin: 0 0 0.4rem;
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.1;
+}
+
+.page-intro p:last-child {
+    margin: 0;
+    max-width: 40rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 0 0 1.25rem;
+}
+
+.filter-btn {
+    border: 1px solid var(--temple-border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--temple-text);
+    font: inherit;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover,
+.filter-btn:focus-visible {
+    background: var(--temple-green);
+    color: #fff;
+    border-color: var(--temple-green);
+}
+
+.temple-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.temple-figure {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--temple-border);
+    border-radius: 0.85rem;
+    box-shadow: var(--shadow);
+}
+
+.temple-figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.temple-figure figcaption {
+    padding: 1rem 1rem 1.15rem;
+}
+
+.temple-figure h2 {
+    margin: 0 0 0.3rem;
+    font-family: "DM Serif Display", serif;
+    font-size: 1.5rem;
+    color: var(--temple-green-dark);
+}
+
+.temple-figure p {
+    margin: 0;
+    color: var(--temple-muted);
+}
+
+.temple-figure span {
+    display: inline-block;
+    margin-top: 0.7rem;
+    background: rgba(23, 75, 58, 0.08);
+    color: var(--temple-green);
+    border-radius: 999px;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.site-footer {
+    padding: 1rem;
+    text-align: center;
+    background: var(--temple-green-dark);
+    color: #fff;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+}
+
+#lastModified {
+    color: rgba(255,255,255,0.8);
+}

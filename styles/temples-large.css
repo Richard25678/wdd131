@@ -21,7 +21,7 @@
         padding: 0.7rem 1rem 0.9rem;
     }
 
-    .site-nav .filter-btn {
+    .site-nav .filter-link {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -44,10 +44,6 @@
         font-size: clamp(2.5rem, 3vw, 3.4rem);
     }
 
-    .filter-btn {
-        padding: 0.65rem 1.2rem;
-    }
-
     .temple-gallery {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -55,13 +51,7 @@
     }
 
     .temple-figure img {
-        width: 100%;
         height: 240px;
-        object-fit: cover;
-    }
-
-    .temple-figure figcaption {
-        padding: 1rem 1rem 1.2rem;
     }
 }
 

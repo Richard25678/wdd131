@@ -1,7 +1,7 @@
 :root {
     --temple-green: #123d32;
     --temple-green-dark: #0d2d26;
-    --temple-gold: #d9b45a;
+    --temple-gold: #e5c46b;
     --temple-paper: #f5f7f3;
     --temple-card: #ffffff;
     --temple-border: #d5dfd9;
@@ -10,7 +10,9 @@
     --shadow: 0 12px 30px rgba(18, 34, 28, 0.08);
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -31,9 +33,13 @@ img {
     display: block;
 }
 
-.site-header {
-    background: linear-gradient(180deg, var(--temple-green) 0%, var(--temple-green-dark) 100%);
+.site-header,
+.site-footer {
     color: #fff;
+    background: var(--temple-green-dark);
+}
+
+.site-header {
     position: sticky;
     top: 0;
     z-index: 10;
@@ -87,7 +93,8 @@ img {
     display: flex;
 }
 
-.site-nav .filter-btn {
+.site-nav .filter-link {
+    display: block;
     color: #fff;
     background: transparent;
     border: 1px solid rgba(255,255,255,0.22);
@@ -95,16 +102,21 @@ img {
     font-weight: 700;
     padding: 0.6rem 0.8rem;
     text-align: left;
-    cursor: pointer;
-    transition: all 150ms ease;
+    text-decoration: none;
+    transition: color 150ms ease, background-color 150ms ease;
 }
 
-.site-nav .filter-btn:hover,
-.site-nav .filter-btn:focus-visible,
-.site-nav .filter-btn.active {
+.site-nav .filter-link:hover,
+.site-nav .filter-link:focus-visible,
+.site-nav .filter-link.active {
     background: var(--temple-gold);
     color: var(--temple-text);
     border-color: var(--temple-gold);
+}
+
+.site-nav .filter-link:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
 }
 
 .temple-page {
@@ -116,7 +128,7 @@ img {
     margin-bottom: 1.25rem;
     padding: 1.3rem 1.2rem;
     border-radius: 1rem;
-    background: linear-gradient(135deg, rgba(23, 75, 58, 0.96), rgba(16, 54, 41, 0.9));
+    background: var(--temple-green-dark);
     color: #fff;
     box-shadow: var(--shadow);
 }
@@ -141,25 +153,6 @@ img {
     margin: 0;
     max-width: 40rem;
     color: #edf5f1;
-}
-
-.filter-btn {
-    border: 1px solid var(--temple-border);
-    border-radius: 999px;
-    background: #fff;
-    color: var(--temple-text);
-    font-weight: 700;
-    padding: 0.6rem 1rem;
-    cursor: pointer;
-    transition: all 150ms ease;
-}
-
-.filter-btn.active,
-.filter-btn:hover,
-.filter-btn:focus-visible {
-    background: var(--temple-green);
-    color: #fff;
-    border-color: var(--temple-green);
 }
 
 .temple-gallery {
@@ -191,14 +184,10 @@ img {
 .site-footer {
     padding: 1rem;
     text-align: center;
-    background: var(--temple-green-dark);
-    color: #fff;
 }
 
-.site-footer p {
-    margin: 0.25rem 0;
-}
-
+.site-footer p,
 #lastModified {
+    margin: 0.25rem 0;
     color: #edf5f1;
 }

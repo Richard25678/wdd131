@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Uganda, the Pearl of Africa. Explore its geography, culture, attractions and weather.">
+    <meta name="author" content="Muwonge Richard">
+    <title>Uganda | Country Information | WDD 131</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo">🇺🇬 Uganda</a>
+        <p class="tagline">The Pearl of Africa</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source
+                    media="(max-width: 600px)"
+                    srcset="images/uganda-small.webp"
+                    type="image/webp">
+                <img
+                    src="images/uganda-large.webp"
+                    srcset="images/uganda-small.webp 600w,
+                            images/uganda-large.webp 1200w"
+                    sizes="100vw"
+                    alt="Beautiful Ugandan landscape with green hills and Lake Victoria"
+                    width="1200"
+                    height="600">
+            </picture>
+            <div class="hero-title">
+                <h1>Uganda</h1>
+                <p>Pearl of Africa</p>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <section class="card country-info">
+                <h2>Country Information</h2>
+                <div class="card-content">
+                    <p><strong>Capital:</strong> <span>Kampala</span></p>
+                    <p><strong>Continent:</strong> <span>Africa</span></p>
+                    <p><strong>Population:</strong> <span>Approximately 45.9 million</span></p>
+                    <p><strong>Languages:</strong> <span>English and Swahili</span></p>
+                    <p><strong>Currency:</strong> <span>Ugandan Shilling (UGX)</span></p>
+                    <p><strong>Area:</strong> <span>241,550 km²</span></p>
+                </div>
+            </section>
+
+            <section class="card weather">
+                <h2>Weather</h2>
+                <div class="weather-content">
+                    <img
+                        class="weather-icon"
+                        src="images/weather.svg"
+                        alt="Partly cloudy weather"
+                        width="100"
+                        height="100">
+
+                    <div class="weather-details">
+                        <p><strong>Temperature:</strong> <span id="temperature">22</span> °C</p>
+                        <p><strong>Conditions:</strong> Partly Cloudy</p>
+                        <p><strong>Wind Speed:</strong> <span id="wind-speed">12</span> km/h</p>
+                        <p><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="currentyear"></span> Uganda | Muwonge Richard</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

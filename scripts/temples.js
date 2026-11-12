@@ -1,4 +1,4 @@
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterLinks = document.querySelectorAll('.filter-link');
 const templeFigures = document.querySelectorAll('.temple-figure');
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
@@ -18,12 +18,21 @@ function applyFilter(filter = 'home') {
     });
 }
 
-if (filterButtons.length) {
-    filterButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const selectedFilter = button.dataset.filter;
+if (filterLinks.length) {
+    filterLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const selectedFilter = link.dataset.filter;
 
-            filterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+            filterLinks.forEach((item) => {
+                const isActive = item === link;
+                item.classList.toggle('active', isActive);
+                if (isActive) {
+                    item.setAttribute('aria-current', 'page');
+                } else {
+                    item.removeAttribute('aria-current');
+                }
+            });
             applyFilter(selectedFilter);
         });
     });

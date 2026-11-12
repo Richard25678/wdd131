@@ -1,0 +1,206 @@
+
+/* WDD 131 - Uganda Country Page */
+
+:root {
+    --primary-color: #111111;
+    --secondary-color: #f5c400;
+    --accent-color: #ce1126;
+    --background-color: #f5f6f2;
+    --card-color: #ffffff;
+    --text-color: #202020;
+    --heading-font: "DM Sans", sans-serif;
+    --body-font: "DM Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.site-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 5%;
+    border-bottom: 6px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.tagline {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    background: #164b31;
+}
+
+.hero picture,
+.hero img {
+    display: block;
+    width: 100%;
+}
+
+.hero img {
+    height: 420px;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,.65), transparent);
+}
+
+.hero-title {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+.hero-title h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+}
+
+.hero-title p {
+    color: var(--secondary-color);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.content-grid {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
+
+.card h2 {
+    background: var(--primary-color);
+    color: white;
+    border-left: 7px solid var(--secondary-color);
+    padding: .8rem 1.2rem;
+    font-size: 1.4rem;
+}
+
+.card-content {
+    padding: 1.4rem;
+}
+
+.country-info .card-content p {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: .5rem;
+    padding: .35rem 0;
+}
+
+.weather h2::after {
+    content: " ⛅";
+    margin-left: .5rem;
+}
+
+.weather-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.weather-details p {
+    margin: .4rem 0;
+}
+
+.site-footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 6px solid var(--secondary-color);
+    font-size: .95rem;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 600px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .hero img {
+        height: 280px;
+    }
+
+    .hero-title {
+        left: 5%;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        margin: 1rem auto;
+        gap: 1rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .weather-content {
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .weather h2::after {
+        content: "";
+    }
+
+    .weather-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .site-footer {
+        font-size: .8rem;
+    }
+}

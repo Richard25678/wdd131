@@ -1,0 +1,241 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #172b3a;
+  background: #f3f6f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --navy: #123047;
+  --teal: #075c50;
+  --gold: #f1c66d;
+  --muted: #526574;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  background: var(--navy);
+  border-radius: 0.35rem;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  color: #fff;
+  background: var(--navy);
+  box-shadow: 0 3px 12px rgb(13 35 50 / 18%);
+}
+
+.header-content {
+  width: min(100% - 2rem, 1200px);
+  min-height: 5rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-name {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.filter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.filter-button {
+  min-height: 2.7rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.filter-button:hover {
+  border-color: var(--gold);
+  color: #172b3a;
+  background: var(--gold);
+}
+
+.filter-button.is-active {
+  color: #fff;
+  background: var(--teal);
+}
+
+.filter-button.is-active:hover {
+  border-color: #fff;
+  background: #06483f;
+}
+
+.filter-button:focus-visible,
+.site-name:focus-visible,
+.skip-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.page-content {
+  width: min(100% - 2rem, 1200px);
+  margin: 0 auto;
+  padding: 2.5rem 0 3.5rem;
+  flex: 1;
+}
+
+h1 {
+  margin: 0 0 1.75rem;
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.temple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr));
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.temple-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #d7e0e5;
+  border-radius: 0.8rem;
+  background: #fff;
+  box-shadow: 0 5px 16px rgb(18 48 71 / 9%);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.temple-card:hover {
+  box-shadow: 0 10px 24px rgb(18 48 71 / 16%);
+  transform: translateY(-3px);
+}
+
+.temple-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #e2e9ed;
+}
+
+.temple-card-content {
+  padding: 1.15rem 1.25rem 1.3rem;
+}
+
+.temple-card h2 {
+  margin: 0 0 0.35rem;
+  color: var(--navy);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.temple-location {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.temple-details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e3e9ec;
+  font-size: 0.94rem;
+}
+
+.temple-details dt {
+  color: var(--muted);
+}
+
+.temple-details dd {
+  margin: 0;
+  color: #172b3a;
+  font-weight: 650;
+  text-align: right;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 1rem 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+.site-footer {
+  padding: 1.25rem 1rem;
+  color: #fff;
+  background: var(--navy);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 700px) {
+  .header-content {
+    padding: 1rem 0;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .filter-nav {
+    justify-content: center;
+  }
+
+  .filter-button {
+    padding-inline: 0.85rem;
+  }
+
+  .page-content {
+    padding-top: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

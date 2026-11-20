@@ -74,6 +74,9 @@ body {
 }
 
 .filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 2.7rem;
   padding: 0.55rem 1rem;
   border: 1px solid transparent;
@@ -83,6 +86,7 @@ body {
   font: inherit;
   font-weight: 650;
   cursor: pointer;
+  text-decoration: none;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
@@ -230,12 +234,12 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  .filter-button,
+  .temple-card {
+    transition-duration: 0.01ms;
+  }
+
+  .temple-card:hover {
+    transform: none;
   }
 }

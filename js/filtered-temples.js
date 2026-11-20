@@ -124,22 +124,27 @@ function renderTemples(filter = "home") {
     : '<p class="empty-state">No temples match this filter.</p>';
 }
 
-function selectFilter(selectedButton) {
-  filterButtons.forEach((button) => {
-    const isSelected = button === selectedButton;
-    button.classList.toggle("is-active", isSelected);
-    button.setAttribute("aria-pressed", String(isSelected));
+function selectFilter(selectedLink) {
+  filterButtons.forEach((link) => {
+    const isSelected = link === selectedLink;
+    link.classList.toggle("is-active", isSelected);
+    if (isSelected) {
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
 document.querySelector(".filter-nav").addEventListener("click", (event) => {
-  const button = event.target.closest("button[data-filter]");
-  if (!button) {
+  const link = event.target.closest("a[data-filter]");
+  if (!link || !event.currentTarget.contains(link)) {
     return;
   }
 
-  selectFilter(button);
-  renderTemples(button.dataset.filter);
+  event.preventDefault();
+  selectFilter(link);
+  renderTemples(link.dataset.filter);
 });
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();

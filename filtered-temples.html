@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore temples around the world in this responsive temple album. Filter by age, size, and location.">
+  <meta name="author" content="Richard Muwonge">
   <meta name="theme-color" content="#123047">
   <title>Temple Album</title>
   <link rel="stylesheet" href="css/filtered-temples.css">
   <script src="js/filtered-temples.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to temple album</a>
+  <a class="skip-link" href="#main-content">Skip to Temple Album</a>
   <header class="site-header">
     <div class="header-content">
       <a class="site-name" href="filtered-temples.html">Temple Album</a>
       <nav class="filter-nav" aria-label="Filter temples">
-        <button class="filter-button is-active" type="button" data-filter="home" aria-pressed="true">Home</button>
-        <button class="filter-button" type="button" data-filter="old" aria-pressed="false">Old</button>
-        <button class="filter-button" type="button" data-filter="new" aria-pressed="false">New</button>
-        <button class="filter-button" type="button" data-filter="large" aria-pressed="false">Large</button>
-        <button class="filter-button" type="button" data-filter="small" aria-pressed="false">Small</button>
+        <a class="filter-button is-active" href="#temple-grid" data-filter="home" aria-current="true">Home</a>
+        <a class="filter-button" href="#temple-grid" data-filter="old">Old</a>
+        <a class="filter-button" href="#temple-grid" data-filter="new">New</a>
+        <a class="filter-button" href="#temple-grid" data-filter="large">Large</a>
+        <a class="filter-button" href="#temple-grid" data-filter="small">Small</a>
       </nav>
     </div>
   </header>

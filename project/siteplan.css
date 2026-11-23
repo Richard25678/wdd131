@@ -747,13 +747,13 @@ h1 span {
   font-size: 1rem;
 }
 
-.wf-button {
+.wf-block > span.wf-button {
   display: inline-block;
   margin-top: 0.2rem;
   padding: 0.28rem 0.45rem;
   border-radius: 0.15rem;
   background: var(--forest);
-  color: var(--paper) !important;
+  color: var(--paper);
 }
 
 .wf-search {
@@ -887,11 +887,11 @@ h1 span {
   opacity: 0.75;
 }
 
-.wf-image-placeholder span {
+.wf-desktop-hero .wf-image-placeholder > span {
   z-index: 1;
   padding: 0.2rem 0.35rem;
   background: var(--forest);
-  color: var(--paper) !important;
+  color: var(--paper);
 }
 
 .wf-desktop-feature {

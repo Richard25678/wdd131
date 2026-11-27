@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Share your experience with a product in this WDD 131 product review form.">
+  <meta name="author" content="Richard Muwonge Ssemaganda">
+  <meta name="theme-color" content="#102744">
+  <title>Product Review | WDD 131</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to review form</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-brand" href="form.html">WDD 131 <span>Product Reviews</span></a>
+      <p class="course-label">Week 05 assignment</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Your feedback matters</p>
+      <h1 id="page-title">Product review</h1>
+      <p>Tell us what you think. Your feedback helps others choose the right product.</p>
+    </section>
+
+    <form class="review-form" action="review.html" method="get">
+      <p class="required-note"><span aria-hidden="true">*</span> Required field</p>
+
+      <div class="form-field">
+        <label for="product-name">Product name <span class="required-mark" aria-hidden="true">*</span></label>
+        <select id="product-name" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </div>
+
+      <fieldset class="form-section rating-section">
+        <legend>Overall rating <span class="required-mark" aria-hidden="true">*</span></legend>
+        <p class="field-hint" id="rating-hint">Choose one rating from 1 (lowest) to 5 (highest).</p>
+        <div class="rating-options" aria-describedby="rating-hint">
+          <label class="rating-option" for="rating-1">
+            <input id="rating-1" type="radio" name="rating" value="1" aria-label="1 star" required>
+            <span class="rating-number">1</span><span class="rating-stars" aria-hidden="true">★</span>
+          </label>
+          <label class="rating-option" for="rating-2">
+            <input id="rating-2" type="radio" name="rating" value="2" aria-label="2 stars" required>
+            <span class="rating-number">2</span><span class="rating-stars" aria-hidden="true">★★</span>
+          </label>
+          <label class="rating-option" for="rating-3">
+            <input id="rating-3" type="radio" name="rating" value="3" aria-label="3 stars" required>
+            <span class="rating-number">3</span><span class="rating-stars" aria-hidden="true">★★★</span>
+          </label>
+          <label class="rating-option" for="rating-4">
+            <input id="rating-4" type="radio" name="rating" value="4" aria-label="4 stars" required>
+            <span class="rating-number">4</span><span class="rating-stars" aria-hidden="true">★★★★</span>
+          </label>
+          <label class="rating-option" for="rating-5">
+            <input id="rating-5" type="radio" name="rating" value="5" aria-label="5 stars" required>
+            <span class="rating-number">5</span><span class="rating-stars" aria-hidden="true">★★★★★</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="installation-date">Date of installation <span class="required-mark" aria-hidden="true">*</span></label>
+        <input id="installation-date" name="installationDate" type="date" required>
+      </div>
+
+      <fieldset class="form-section">
+        <legend>Which features did you find useful?</legend>
+        <p class="field-hint">Select all that apply.</p>
+        <div class="feature-options">
+          <label class="check-option" for="feature-easy">
+            <input id="feature-easy" name="features" type="checkbox" value="easy-to-use">
+            <span>Easy to use</span>
+          </label>
+          <label class="check-option" for="feature-design">
+            <input id="feature-design" name="features" type="checkbox" value="design">
+            <span>Design and appearance</span>
+          </label>
+          <label class="check-option" for="feature-performance">
+            <input id="feature-performance" name="features" type="checkbox" value="performance">
+            <span>Performance</span>
+          </label>
+          <label class="check-option" for="feature-value">
+            <input id="feature-value" name="features" type="checkbox" value="value">
+            <span>Value for money</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="written-review">Written review <span class="optional-note">(optional)</span></label>
+        <textarea id="written-review" name="review" rows="5" placeholder="What did you like or what could be improved?"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="user-name">Your name <span class="optional-note">(optional)</span></label>
+        <input id="user-name" name="name" type="text" autocomplete="name">
+      </div>
+
+      <button class="submit-button" type="submit">Submit review <span aria-hidden="true">→</span></button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="current-year">2026</span> Richard Muwonge Ssemaganda</p>
+      <p>WDD 131 · Product Review Form</p>
+    </div>
+  </footer>
+</body>
+</html>
